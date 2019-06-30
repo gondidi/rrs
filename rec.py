@@ -3,7 +3,7 @@
 import sys, os, pathlib, datetime, time, requests, json, subprocess
 from email import utils
 args = sys.argv
-usage = "Usage : " + args[0] + " channel(FM|R1|R2) duration(minuites) [progname (channel)] [cutoff] [filenamepattern ('+%m%d%%%H%M%S')] | " + args[0] + " -mode norec"
+usage = "Usage : rec.py channel(FM|R1|R2) duration(minuites) [progname (channel)] [cutoff] [filenamepattern ('+%m%d%%%H%M%S')] | rec.py -mode norec"
 documentroot = pathlib.Path('/var/www/html')
 mode = all
 if len(args) < 3:
