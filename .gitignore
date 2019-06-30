@@ -1,0 +1,8 @@
+*.bak
+*.mp3
+*.m4a
+*.xml
+*.dsc
+.DS_Store
+._.DS_Store
+.git.old

@@ -1,0 +1,6 @@
+{
+        "podtitle": "MyRadio",
+        "maxdays": 60,
+        "maxfiles": 100,
+        "maxdu": 1000
+        }

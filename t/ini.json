@@ -1,0 +1,6 @@
+{
+        "podtitle": "Test Timer",
+        "maxdays": 3,
+        "maxfiles": 10,
+        "maxdu": 10
+        }
