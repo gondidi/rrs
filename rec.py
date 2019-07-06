@@ -140,7 +140,7 @@ for f in list(p.glob("*.dsc")):
 podtitle = podparams["podtitle"]
 poddsc = "".join((str(du) + "M" + subprocess.check_output('df .'.split()).decode().split()[-2] + open("/sys/class/thermal/thermal_zone0/temp","r").read()[0:3] + "'C" + subprocess.check_output(['uptime']).decode()).split())
 hosts = [[os.uname()[1], '0']]
-hosts += [[l.split()[1].split('/')[0], l.split()[7][0] + l.split()[7][-1]] for l in subprocess.check_output('ip a'.split()).decode().splitlines() if "global" in l]
+hosts += [[l.split()[1].split('/')[0], l.split()[7]] for l in subprocess.check_output('ip a'.split()).decode().splitlines() if "global" in l]
 #print(hosts)
 for host in hosts:
   publicurl = "http://" + host[0] + "/" + str(documentroot.cwd().relative_to(documentroot))
