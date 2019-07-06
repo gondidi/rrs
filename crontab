@@ -22,6 +22,6 @@ RRS=/var/www/html/rrs
 0 1-22/3 * * * sleep 26;cd $RRS/t;$REC R1 0 test1R '「' '\%m\%d\%H\%M\%S{}'
 0 2-23/3 * * * sleep 26;cd $RRS/t;$REC R2 0 test2R '「' '\%m\%d\%H\%M\%S{}'
 @reboot cat /proc/cpuinfo
-#* * * * * ip a
 #@reboot sleep 300; sudo poweroff
-#@reboot cd /var/www/html; sudo python3 -m http.server 80
+# sudo ln -sf /usr/bin/vim /etc/alternatives/editor
+# sudo /etc/init.d/rsyslog restart
