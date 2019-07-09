@@ -42,7 +42,11 @@ if mode != 'norec':
   filename = ""
   epidsc = ""
   try:
-    present = requests.get("http://api.nhk.or.jp/v2/pg/now/130/" + ch +".json?key=Ym2qyF2CRLGVlRQbnaAtRxqAbGEXTMxS").json()["nowonair_list"][ch]["present"]
+    nowonair = requests.get("http://api.nhk.or.jp/v2/pg/now/130/" + ch +".json?key=Ym2qyF2CRLGVlRQbnaAtRxqAbGEXTMxS").json()["nowonair_list"][ch]
+    if datetime.datetime.strptime(nowonair['present']['start_time"]) < datetime.datetime.now():
+      present = nowonair["present"]
+    else:
+      present = nowonair["following"]      
     filename = present["title"]
     epidsc = present["subtitle"]
   except:
