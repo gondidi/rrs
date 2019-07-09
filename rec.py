@@ -32,26 +32,24 @@ else:
   sys.exit()
 #print("ch=", ch)
 if mode != 'norec':
-  duration = int(args[2]) * 60 + 10
-  sleep = 28
+  duration = int(args[2]) * 60 + 5
   #print("duration=", duration)
   if len(args) > 3:
     progname = args[3]
   else:
     progname = channel
   #print("progname=", progname)
-  filename = ""
-  epidsc = ""
   try:
-    following = requests.get("http://api.nhk.or.jp/v2/pg/now/130/" + ch +".json?key=Ym2qyF2CRLGVlRQbnaAtRxqAbGEXTMxS").json()["nowonair_list"][ch]["following"]
-#    if datetime.datetime.strptime(nowonair['present']['start_time"]) < datetime.datetime.now():
-#      present = nowonair["present"]
-#    else:
-#      present = nowonair["following"]      
-    filename = following["title"]
-    epidsc = following["subtitle"]
+    nowonair = requests.get("http://api.nhk.or.jp/v2/pg/now/130/" + ch +".json?key=Ym2qyF2CRLGVlRQbnaAtRxqAbGEXTMxS").json()["nowonair_list"][ch]
+    if datetime.datetime.strptime(nowonair["present"]["end_time"], '%Y-%m-%dT%H:%M:%S+09:00') > datetime.datetime.now():
+        present = nowonair["present"]
+    else:
+        present = nowonair["following"]
+    filename = present["title"]
+    epidsc = present["subtitle"]
   except:
-    pass
+    filename = ""
+    epidsc = ""
   if len(filename) < 2:
     filename = progname
   if len(epidsc) > 0:
@@ -74,7 +72,6 @@ if mode != 'norec':
   #print("filenamepattern=", filenamepattern)
   filename = filenamepattern.format(filename)
   #print("filenane=", filename)
-  time.sleep(sleep)
   ffmpeg = ["/usr/bin/ffmpeg", "-loglevel", "quiet", "-y", "-i", m3u8url, "-to", str(duration), "-metadata", "genre=Radio", "-metadata", "artist=" + channel, "-metadata", "album=" + progname, "-c", "copy", filename + ".m4a"]
   #print("ffmpeg=", ffmpeg)
   subprocess.check_call(ffmpeg)
