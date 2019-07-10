@@ -2,22 +2,22 @@ CONTENT_TYPE=text/plain; charset=UTF-8
 LANG=ja_JP.UTF-8
 REC=/var/www/html/rrs/rec.py
 RRS=/var/www/html/rrs
-22 02 * * 2    sudo /home/pi/rpi-clone/rpi-clone -U
-20 07 * * 6    sleep 27;cd $RRS/r;$REC FM 100 "Weekend Sunshine"
-00 09 * * 6    sleep 27;cd $RRS/r;$REC FM 115 "Comfort Selection"
-00 16 * * 6    sleep 27;cd $RRS/r;$REC FM 120 "Radioman Jack"
-00 18 * * 6    sleep 27;cd $RRS/r;$REC FM  50 "The Soul Music"
+11 01 * * 1    sudo /home/pi/rpi-clone/rpi-clone sda -U
+20 07 * * 6    sleep 27;cd $RRS/r;$REC FM 100 'Weekend Sunshine' '' '\%m\%dWeekendSunshine'
+00 09 * * 6    sleep 27;cd $RRS/r;$REC FM 115 'World Comfort Selection' '' '\%m\%dComforSelection'
+00 16 * * 6    sleep 27;cd $RRS/r;$REC FM 120 'Radioman Jack' '' '\%m\%dRadiomanJack'
+00 18 * * 6    sleep 27;cd $RRS/r;$REC FM  50 'The Soul Music' '' '\%m\%dTheSoulMusic'
 00 22 * * 6    sleep 27;cd $RRS/r;$REC FM  50 Theater
-00 23 * * 6    sleep 27;cd $RRS/r;$REC FM 120 "Jazz Tonight"
-00 09 * * 7    sleep 27;cd $RRS/r;$REC FM 115 Library
-00 16 * * 7    sleep 27;cd $RRS/r;$REC FM  60 YGD
-00 21 * * 7    sleep 27;cd $RRS/r;$REC FM  60 Discover
-00 23 * * 1    sleep 27;cd $RRS/r;$REC FM  50 "Mellow Nights"
+00 23 * * 6    sleep 27;cd $RRS/r;$REC FM 120 'Jazz Tonight' '' '\%m\%dJazzTonight'
+00 09 * * 7    sleep 27;cd $RRS/r;$REC FM 115 Library '' '\%m\%dLibrary'
+00 16 * * 7    sleep 27;cd $RRS/r;$REC FM  60 YGD '' '\%m\%dYGD'
+00 21 * * 7    sleep 27;cd $RRS/r;$REC FM  60 Discover '' '\%m\%dDiscover'
+00 23 * * 1    sleep 27;cd $RRS/r;$REC FM  50 'Mellow Nights' '' '\%m\%dMellowNights'
 #50 05 * * *    sleep 27;cd $RRS/r;$REC fm   5 Kobako '「'
 #50 15 * * 0-4  sleep 27;cd $RRS/r;$REC fm  10 Sketch '「'
 #00 00 * * 2-6  sleep 27;cd $RRS/r;$REC FM  50 Playlist
-00 18 * * 1-5  sleep 27;cd $RRS/r;$REC FM  50 Playlist '「'
-30 09 * * 1-3  sleep 27;cd $RRS/o;$REC R2  15 'お話出てこい' '「' '{}\%m\%d\%H\%M'
+00 18 * * 1-5  sleep 27;cd $RRS/r;$REC FM  50 Playlist '「' '\%m\%dPlaylist'
+30 09 * * 1-3  sleep 27;cd $RRS/o;$REC R2  15 'お話出てこい' '「' '{}\%m\%d'
 0 0-21/3 * * * sleep 27;cd $RRS/t;$REC FM 0 testFM '「' '\%m\%d\%H\%M\%S{}'
 #0 1-22/3 * * * sleep 27;cd $RRS/t;$REC R1 0 test1R '「' '\%m\%d\%H\%M\%S{}'
 #0 2-23/3 * * * sleep 27;cd $RRS/t;$REC R2 0 test2R '「' '\%m\%d\%H\%M\%S{}'
