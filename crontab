@@ -4,7 +4,7 @@ REC=/var/www/html/rrs/rec.py
 RRS=/var/www/html/rrs
 11 01 * * 1    sudo /home/pi/rpi-clone/rpi-clone sda -U
 20 07 * * 6    sleep 27;cd $RRS/r;$REC FM 100 'Weekend Sunshine' '' '\%m\%dWeekendSunshine'
-00 09 * * 6    sleep 27;cd $RRS/r;$REC FM 115 'World Comfort Selection' '' '\%m\%dComforSelection'
+00 09 * * 6    sleep 27;cd $RRS/r;$REC FM 115 'World Comfort Selection' '' '\%m\%dComfortSelection'
 00 16 * * 6    sleep 27;cd $RRS/r;$REC FM 120 'Radioman Jack' '' '\%m\%dRadiomanJack'
 00 18 * * 6    sleep 27;cd $RRS/r;$REC FM  50 'The Soul Music' '' '\%m\%dTheSoulMusic'
 00 22 * * 6    sleep 27;cd $RRS/r;$REC FM  50 Theater
