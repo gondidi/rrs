@@ -22,6 +22,7 @@ RRS=/var/www/html/rrs
 #* 1-22/3 * * * sleep 27;cd $RRS/t;$REC R1 0 test1R '「' '\%m\%d\%H\%M\%S{}'
 #* 2-23/3 * * * sleep 27;cd $RRS/t;$REC R2 0 test2R '「' '\%m\%d\%H\%M\%S{}'
 #@reboot cat /proc/cpuinfo
-#@reboot sleep 300; sudo poweroff
 # sudo ln -sf /usr/bin/vim /etc/alternatives/editor
 # sudo /etc/init.d/rsyslog restart
+#@reboot sleep 300; sudo poweroff
+#* * * * * ip a | grep global | logger -p cron.info
