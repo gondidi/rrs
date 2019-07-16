@@ -58,12 +58,14 @@ if mode != 'norec':
     epidsc = filename
   filename = "".join(epidsc.split())
   if len(args) > 4: #cutoff
-    cutoff = args[4]
-    if len(cutoff) > 0:
-  #    print("cutoff=", cutoff)
-      filename = filename[filename.find(cutoff)+1:]
+#    cutoff = args[4]
+#    if len(cutoff) > 0:
+#  #    print("cutoff=", cutoff)
+#      filename = filename[filename.find(cutoff)+1:]
+    for c in args[4]: #cutoff
+      filename=filename[filename.find(c)+1:]
   filename = filename[0:20]
-  #print("filenane=", filename)
+  #print("filename=", filename)
   #print("epidesc=", epidsc)
   if len(args) > 5: # datepattern
     filenamepattern = datetime.datetime.today().strftime(args[5])
