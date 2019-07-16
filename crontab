@@ -16,9 +16,9 @@ RRS=/var/www/html/rrs
 00 00 * * 2-6  sleep 27;cd $RRS/r;$REC FM  50 Playlist '▽' '\%m\%dPlaylist{}'
 00 18 * * 1-5  sleep 27;cd $RRS/r;$REC FM  50 Playlist '「' '\%m\%dPlaylist{}'
 30 09 * * 1-3  sleep 27;cd $RRS/o;$REC R2  15 'お話出てこい' '「' '{}\%m\%d'
-#* 0-21/3 * * * sleep 27;cd $RRS/t;$REC FM 0 testFM '「' '\%m\%d\%H\%M\%S{}'
-#* 1-22/3 * * * sleep 27;cd $RRS/t;$REC R1 0 test1R '「' '\%m\%d\%H\%M\%S{}'
-#* 2-23/3 * * * sleep 27;cd $RRS/t;$REC R2 0 test2R '「' '\%m\%d\%H\%M\%S{}'
+0 0-21/3 * * * sleep 27;cd $RRS/t;$REC FM 0 testFM '「' '\%m\%d\%H\%M\%S{}'
+0 1-22/3 * * * sleep 27;cd $RRS/t;$REC R1 0 test1R '「' '\%m\%d\%H\%M\%S{}'
+0 2-23/3 * * * sleep 27;cd $RRS/t;$REC R2 0 test2R '「' '\%m\%d\%H\%M\%S{}'
 #@reboot cat /proc/cpuinfo
 # sudo ln -sf /usr/bin/vim /etc/alternatives/editor
 # sudo /etc/init.d/rsyslog restart
