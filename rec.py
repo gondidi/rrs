@@ -124,6 +124,7 @@ if len(files) > minfiles:
 maxdu = podparams["maxdu"]
 #files = list(p.glob("*.m4a"))+list(p.glob("*.mp3"))+list(p.glob("*.aac"))
 files = [f for fs in [list(p.glob(ext)) for ext in exts] for f in fs]
+du = 0
 if len(files) > minfiles:
   files.sort(key=lambda x: x.stat().st_mtime)
   for f in files[:-minfiles]:
