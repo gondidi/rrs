@@ -6,11 +6,11 @@ RRS=/var/www/html/rrs
 
 20 07 * * 6    sleep 25;cd $RRS/r;$REC FM 100 'Weekend Sunshine' '▽' '\%m\%dWeekendSunshine{}'
 00 09 * * 6    sleep 25;cd $RRS/r;$REC FM 115 'World Comfort Selection' '▽' '\%m\%dComfortSelection{}'
-00 09 * * 7    sleep 25;cd $RRS/r;$REC FM 115 Library '▽' '\%m\%dLibrary{}'
+#00 09 * * 7    sleep 25;cd $RRS/r;$REC FM 115 Library '▽' '\%m\%dLibrary{}'
 00 16 * * 6    sleep 25;cd $RRS/r;$REC FM 120 'Radioman Jack' '▽' '\%m\%dRadiomanJack{}'
 00 16 * * 7    sleep 25;cd $RRS/r;$REC FM  60 YGD '▽' '\%m\%dYGD{}'
 00 18 * * 6    sleep 25;cd $RRS/r;$REC FM  50 'The Soul Music' '▽' '\%m\%dTheSoulMusic{}'
-01 18 * * 1-5  sleep 25;cd $RRS/r;$REC FM  49 Playlist '「' '\%m\%dPlaylist{}'
+01 18 * * 1-5  sleep 25;cd $RRS/r;$REC FM  49 Playlist 'ト' '\%m\%dPlaylist{}'
 00 21 * * 7    sleep 25;cd $RRS/r;$REC FM  60 Discover '▽' '\%m\%dDiscover{}'
 00 22 * * 6    sleep 25;cd $RRS/r;$REC FM  50 Theater '「' '\%m\%dTheater{}'
 00 23 * * 6    sleep 25;cd $RRS/r;$REC FM 120 'Jazz Tonight' '▽' '\%m\%dJazzTonight{}'

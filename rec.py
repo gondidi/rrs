@@ -56,7 +56,9 @@ if mode != 'norec':
     epidsc = filename + "▽" + epidsc
   else:
     epidsc = filename
+  epidsc = epidsc.translate(str.maketrans({chr(0xFF01 + i): chr(0x21 + i) for i in range(94)})).replace('&','＆').replace('　',' ')
   filename = "".join(epidsc.split())
+#  epidsc = filename
   if len(args) > 4: #cutoff
 #    cutoff = args[4]
 #    if len(cutoff) > 0:
